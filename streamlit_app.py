@@ -1,7 +1,7 @@
 #############################################   Parametrage
 import streamlit as st
 import pandas as pd
-from pages.accueil import accueil
+from pages.accueil1 import accueil
 from pages.analyse import analyse
 from pages.prediction import prediction
 from pages.apropos import apropos
