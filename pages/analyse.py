@@ -1,7 +1,7 @@
 import streamlit as st
 import plotly.express as px
 
-def analyse(data):
+def analyse1(data):
     col1, col2, col3 = st.columns(3)
 
     with col1:

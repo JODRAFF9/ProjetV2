@@ -49,7 +49,7 @@ if st.session_state.pag == "Accueil":
 
 # Section Analyse
 if st.session_state.pag == "Analyse":
-    analyse(train_df_labelled)
+    analyse1(train_df_labelled)
     
 # Section Prédiction  
 if st.session_state.pag == "Prédiction":
