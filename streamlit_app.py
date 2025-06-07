@@ -5,7 +5,7 @@ from pages.accueil import accueil
 from pages.analyse import analyse
 from pages.prediction import prediction
 from pages.apropos import apropos
-from funcs import load_data,map,style
+from funcs import load_data, map, style
 
 # Configuration de la page Streamlit
 st.set_page_config(page_title="Prédiction du BANK CHURN ",page_icon="docs/icon.png" , layout="wide")
