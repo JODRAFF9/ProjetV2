@@ -190,7 +190,7 @@ if st.session_state.page == "Prédiction":
     st.subheader("🔍 Prédiction de Churn Client")
 
     form_data = {}
-    input_features = train_df_labelled.drop("Exited", axis=1)
+    input_features = train_df.drop("Exited", axis=1)
 
     st.markdown("**Veuillez saisir les caractéristiques du client :**")
     for col_label in input_features.columns:
