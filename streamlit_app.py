@@ -1,10 +1,10 @@
 #############################################   Parametrage
 import streamlit as st
 import pandas as pd
-from pages.accueil import accueil
-from pages.analyse import analyse
-from pages.prediction import prediction
-from pages.apropos import apropos
+from branch.accueil import accueil
+from branch.analyse import analyse
+from branch.prediction import prediction
+from branch.apropos import apropos
 from funcs import load_data, map, style
 
 # Configuration de la page Streamlit
