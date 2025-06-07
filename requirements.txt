@@ -2,5 +2,5 @@ numpy==1.26.4
 pandas==2.2.2
 streamlit==1.32.2
 dill==0.3.8
-plotly
-sklearn
+plotly==5.21.0
+scikit-learn==1.4.2
