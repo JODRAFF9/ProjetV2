@@ -212,7 +212,7 @@ if st.session_state.page == "Prédiction":
             prediction = model.predict(input_data)[0]
             proba = model.predict_proba(input_data)[0][1]  # Proba de churn
 
-            if prediction == "Yes":
+            if prediction == 1:
                 st.error(f"❌ Le client est susceptible de quitter la banque. (Probabilité : {proba:.2%})")
             else:
                 st.success(f"✅ Le client est susceptible de rester. (Probabilité de churn : {proba:.2%})")
