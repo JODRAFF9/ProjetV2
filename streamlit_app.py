@@ -5,7 +5,8 @@ from pages.accueil import accueil
 from pages.analyse import analyse
 from pages.prediction import prediction
 from pages.apropos import apropos
-from funcs import load_data,map
+from funcs import load_data,map,style
+
 
 # Configuration de la page Streamlit
 st.set_page_config(page_title="Prédiction du BANK CHURN ",page_icon="docs/icon.png" , layout="wide")
@@ -24,56 +25,7 @@ if "page" not in st.session_state:
     
 # Titre de l'application
 st.title("🏡 **Application de Prédiction du BANK CHURN**")
-st.markdown(
-    """
-    <style>
-    .stApp {
-        background-image: url("https://urlr.me/JbhpKx");
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        color: white;
-    }
-
-        /* Styliser les titres */
-    h1{
-        color: white;
-    }
-    h2, h3 {
-        color: black;
-    }
-
-    /* Centrer les colonnes de la navbar */
-    div[data-testid="column"] {
-        display: flex;
-        justify-content: center;
-    }
-
-    /* Styliser les boutons */
-    .stButton>button {
-        background-color: black;
-        color: white;
-        border: #7ED957;
-        padding: 0.5em 1.2em;
-        border-radius: 8px;
-        font-weight: bold;
-        font-size: 16px;
-        transition: background-color 0.3s ease;
-    }
-
-    .stButton > button:hover {
-        background-color: #7ED957;
-        color: black;
-        transform: scale(1.05); /* agrandissement de 5% */
-        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-        border-radius: 25px;
-        border: 2px solid #7ED957;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
-
+style()
 
 
 # Fonction pour changer la page active dans st.session_state
