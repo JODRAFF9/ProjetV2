@@ -20,6 +20,10 @@ map(train_df_labelled)
 
 ############################################ Pages
 
+# Initialisation de l'état de la page (si ce n'est pas déjà fait)
+if "page" not in st.session_state:
+    st.session_state.page = "Accueil"
+
 st.markdown(
     """
     <style>
@@ -110,9 +114,7 @@ if st.session_state.page == "A-propos":
 
     st.write("---")
     
-# Initialisation de l'état de la page (si ce n'est pas déjà fait)
-if "page" not in st.session_state:
-    st.session_state.page = "Accueil"
+
 
 # Titre de l'application
 st.title("🏡 **Application de Prédiction du BANK CHURN**")
