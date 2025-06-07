@@ -190,8 +190,8 @@ if st.session_state.page == "Prédiction":
     st.subheader("🔍 Prédiction de Churn Client")
 
     form_data = {}
-    input_features = train_df.drop("Exited", axis=1)
-
+    input_features = train_df_labelled.drop("Exited", axis=1)
+    
     st.markdown("**Veuillez saisir les caractéristiques du client :**")
     for col_label in input_features.columns:
         if input_features[col_label].dtype == 'object':
@@ -200,6 +200,7 @@ if st.session_state.page == "Prédiction":
             form_data[col_label] = st.number_input(f"{col_label}", value=float(input_features[col_label].mean()))
 
     input_data = pd.DataFrame([form_data])
+    input_data=unmap(input_data)
 
     if st.checkbox("📋 Afficher les données saisies"):
         st.dataframe(input_data)

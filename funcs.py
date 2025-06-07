@@ -18,18 +18,21 @@ def load_model():
         return dill.load(f)
 
 def map(data):
+    """Mappe les valeurs binaires 0/1 vers 'No'/'Yes'."""
     binary_mapping = {0: 'No', 1: 'Yes'}
     binary_cols = ['HasCrCard', 'IsActiveMember', 'Exited']
-
-    cat_cols = ['Geography', 'Gender', 'Tenure', 'NumOfProducts', 'HasCrCard',
-        'IsActiveMember']
-
-    num_cols = ['CreditScore', 'Age', 'Balance', 'EstimatedSalary']
-
-    target = 'Exited'
-
     for col in binary_cols:
-        data[col] = data[col].map(binary_mapping)
+        if col in data.columns:
+            data[col] = data[col].map(binary_mapping)
+    return data
+
+def unmap(data):
+    """Remappe les valeurs 'No'/'Yes' vers 0/1 pour la prédiction."""
+    binary_mapping = {'No': 0, 'Yes': 1}
+    binary_cols = ['HasCrCard', 'IsActiveMember']
+    for col in binary_cols:
+        if col in data.columns:
+            data[col] = data[col].map(binary_mapping)
     return data
 
 
@@ -75,17 +78,3 @@ def nom_variable(nom, mode='vers_descriptif'):
         return correspondance_inverse.get(nom, nom)
     else:
         raise ValueError("Le mode doit être soit 'vers_descriptif' soit 'vers_technique'")
-    
-    noms_descriptifs = [
-    "le score de crédit",
-    "le pays de résidence",
-    "le genre du client",
-    "l'âge du client",
-    "la durée de relation client",
-    "le solde du compte",
-    "le nombre de produits souscrits",
-    "la possession d'une carte crédit",
-    "le statut de membre actif",
-    "le revenu annuel estimé",
-    "l'indicateur d'attrition"
-]
