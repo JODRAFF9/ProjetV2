@@ -27,7 +27,7 @@ with st.sidebar:
     📍 Basée à Dakar  
     📞 Contact : support@bankanalytics.com  
     """)
-    
+
 
 # Initialisation de l'état de la page (si ce n'est pas déjà fait)
 if "page" not in st.session_state:
