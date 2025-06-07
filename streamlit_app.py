@@ -38,7 +38,10 @@ st.markdown(
     }
 
         /* Styliser les titres */
-    h1, h2, h3 {
+    h1{
+        color: white;
+    }
+    h2, h3 {
         color: black;
     }
 
