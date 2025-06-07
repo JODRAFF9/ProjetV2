@@ -260,5 +260,3 @@ if st.session_state.page == "A-propos":
     st.markdown(custom_button, unsafe_allow_html=True)
 
     st.write("---")
-    
-
