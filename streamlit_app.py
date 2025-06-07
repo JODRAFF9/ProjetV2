@@ -2,7 +2,7 @@
 import streamlit as st
 import pandas as pd
 from pages.accueil import accueil
-from pages.analyse import analyse1
+from pages.analyse import analyseaa
 from pages.prediction import prediction
 from pages.apropos import apropos
 from funcs import load_data,map,style
@@ -49,7 +49,7 @@ if st.session_state.pag == "Accueil":
 
 # Section Analyse
 if st.session_state.pag == "Analyse":
-    analyse1(train_df_labelled)
+    analyseaa(train_df_labelled)
     
 # Section Prédiction  
 if st.session_state.pag == "Prédiction":
