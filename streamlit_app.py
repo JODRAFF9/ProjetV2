@@ -23,7 +23,9 @@ map(train_df_labelled)
 # Initialisation de l'état de la page (si ce n'est pas déjà fait)
 if "page" not in st.session_state:
     st.session_state.page = "Accueil"
-
+    
+# Titre de l'application
+st.title("🏡 **Application de Prédiction du BANK CHURN**")
 st.markdown(
     """
     <style>
@@ -78,8 +80,7 @@ st.markdown(
 
 # Section Accueil
 
-# Titre de l'application
-st.title("🏡 **Application de Prédiction du BANK CHURN**")
+
 # Fonction pour changer la page active dans st.session_state
 def set_page(page_name):
     st.session_state.page = page_name
