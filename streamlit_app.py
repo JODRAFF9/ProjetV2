@@ -18,7 +18,6 @@ train_df = load_data("data/cleaned data/train_df.csv")
 train_df_labelled=train_df.drop(['id',"CustomerId","Surname"], axis=1)
 map(train_df_labelled)
 
-
 ############################################ Pages
 
 # Initialisation de l'état de la page (si ce n'est pas déjà fait)
@@ -78,44 +77,6 @@ st.markdown(
 
 
 # Section Accueil
-if st.session_state.page == "Prédiction":
-    st.write("---")
-
-if st.session_state.page == "A-propos":
-    st.header(" Description des données")
-    file_path="docs/description.txt"
-    
-    try:
-        with open(file_path, "r") as file:
-            description = file.read()
-    except FileNotFoundError:
-        st.error(f"Le fichier '{file_path}' est introuvable.")
-        st.stop()
-
-    st.code(description, language="markdown")
-
-    def get_download_button_html(text, filename, button_text, bg_color="#4CAF50", text_color="white"):
-        b64 = base64.b64encode(text.encode()).decode()
-        return f"""
-        <a href="data:text/plain;base64,{b64}" download="{filename}">
-            <button style="
-                background-color:{bg_color};
-                color:{text_color};
-                padding:10px 20px;
-                border:none;
-                border-radius:5px;
-                cursor:pointer;
-                font-size:16px;
-            ">{button_text}</button>
-        </a>
-        """
-
-    custom_button = get_download_button_html(description, "description.txt", "📥 Télécharger la description", "#007acc")
-    st.markdown(custom_button, unsafe_allow_html=True)
-
-    st.write("---")
-    
-
 
 # Titre de l'application
 st.title("🏡 **Application de Prédiction du BANK CHURN**")
@@ -223,3 +184,42 @@ elif st.session_state.page == "Analyse":
 
     st.markdown("### 🎯 la relation entre âge et Churn")
     st.plotly_chart(fig3, use_container_width=True)
+    
+if st.session_state.page == "Prédiction":
+    st.write("---")
+
+if st.session_state.page == "A-propos":
+    st.header(" Description des données")
+    file_path="docs/description.txt"
+    
+    try:
+        with open(file_path, "r") as file:
+            description = file.read()
+    except FileNotFoundError:
+        st.error(f"Le fichier '{file_path}' est introuvable.")
+        st.stop()
+
+    st.code(description, language="markdown")
+
+    def get_download_button_html(text, filename, button_text, bg_color="#4CAF50", text_color="white"):
+        b64 = base64.b64encode(text.encode()).decode()
+        return f"""
+        <a href="data:text/plain;base64,{b64}" download="{filename}">
+            <button style="
+                background-color:{bg_color};
+                color:{text_color};
+                padding:10px 20px;
+                border:none;
+                border-radius:5px;
+                cursor:pointer;
+                font-size:16px;
+            ">{button_text}</button>
+        </a>
+        """
+
+    custom_button = get_download_button_html(description, "description.txt", "📥 Télécharger la description", "#007acc")
+    st.markdown(custom_button, unsafe_allow_html=True)
+
+    st.write("---")
+    
+
