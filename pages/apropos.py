@@ -3,8 +3,8 @@ import base64
 
 def apropos():
     st.header(" Description des données")
-    file_path="../docs/description.txt"
-    
+    file_path="docs/description.txt"
+
     try:
         with open(file_path, "r") as file:
             description = file.read()
