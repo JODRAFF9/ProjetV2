@@ -1,6 +1,8 @@
 #############################################   Parametrage
 import streamlit as st
 import pandas as pd
+
+# je nomme le dossier de mes pages par branch au lieu de "pages" qui est un mot clé dans streamlit détectant les pages et génère automatiquement le sidebar
 from branch.accueil import accueil
 from branch.analyse import analyse
 from branch.prediction import prediction
