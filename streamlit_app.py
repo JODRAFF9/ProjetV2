@@ -110,7 +110,7 @@ if st.session_state.page == "Accueil":
     st.write("""
         Cette application vous offre des outils intuitifs pour :
         - 🟡 Prévoir si un client risque de quitter la banque.
-        - 📊 Analyser les **Caractéristiques des clients**
+        - 📊 Analyser les **Caractéristiques de ces clients**
     """)
 
     st.info("Utilisez la barre de navigation pour explorer les différentes fonctionnalités.")
