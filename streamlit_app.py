@@ -4,7 +4,7 @@ import pandas as pd
 import base64
 import plotly.express as px
 from funcs import *
-#from sklearn.linear_model import LogisticRegression
+from sklearn.linear_model import LogisticRegression
 
 # Configuration de la page Streamlit
 st.set_page_config(page_title="Prédiction du BANK CHURN ",page_icon="docs/icon.png" , layout="wide")
