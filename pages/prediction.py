@@ -2,7 +2,7 @@ import sklearn
 from sklearn.linear_model import LogisticRegression
 import streamlit as st
 import pandas as pd
-from funcs import load_model
+from funcs import load_model,unmap
 
 
 def prediction(data):
