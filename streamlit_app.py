@@ -4,6 +4,7 @@ import pandas as pd
 import base64
 import plotly.express as px
 from funcs import *
+import sklearn
 from sklearn.linear_model import LogisticRegression
 
 # Configuration de la page Streamlit
