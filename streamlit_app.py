@@ -109,7 +109,7 @@ if st.session_state.page == "Accueil":
     st.header("Bienvenue 👋")
     st.write("""
         Cette application vous offre des outils intuitifs pour :
-        - 🟡 Prédire le **BANK CHURN** à partir de caractéristiques clés.
+        - 🟡 Prévoir si un client risque de quitter la banque.
         - 📊 Analyser les **Caractéristiques des clients**
     """)
 
