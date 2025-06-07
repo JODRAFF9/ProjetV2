@@ -11,7 +11,6 @@ from funcs import load_data,map,style
 # Configuration de la page Streamlit
 st.set_page_config(page_title="Prédiction du BANK CHURN ",page_icon="docs/icon.png" , layout="wide")
 
-
 # Chargement des données
 train_df = load_data("data/cleaned data/train_df.csv")
 train_df_labelled=train_df.drop(['id',"CustomerId","Surname"], axis=1)
