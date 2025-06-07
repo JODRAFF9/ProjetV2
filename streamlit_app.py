@@ -16,7 +16,23 @@ st.set_page_config(page_title="Prédiction du BANK CHURN ",page_icon="docs/icon.
 train_df = load_data("data/cleaned data/train_df.csv")
 train_df_labelled=train_df.drop(['id',"CustomerId","Surname"], axis=1)
 map(train_df_labelled)
+##################################################################
 
+# Sidebar personnalisée
+with st.sidebar:
+    st.image("images/logo.png", width=200)  # Remplace par le chemin de ton image
+    st.markdown("""
+    ### 📌 À propos de l'entreprise
+    
+    Bienvenue dans notre application de prédiction du churn bancaire.
+    
+    Cette solution vise à analyser les comportements des clients et prédire les départs potentiels pour améliorer la fidélisation.
+
+    **Entreprise** : XYZ Analytics  
+    **Contact** : contact@xyz-analytics.com
+    """)
+    
+#############################################################################
 # Initialisation de l'état de la page (si ce n'est pas déjà fait)
 if "pag" not in st.session_state:
     st.session_state.pag = "Accueil"
