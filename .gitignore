@@ -1,0 +1,17 @@
+# Ignorer l'environnement virtuel
+env/
+
+# Fichiers temporaires et caches Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Fichiers de logs / notebooks / Streamlit
+*.log
+.ipynb_checkpoints/
+.streamlit/
+
+# Cache pip
+pip-wheel-metadata/
+*.egg-info/
