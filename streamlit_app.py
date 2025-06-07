@@ -25,7 +25,7 @@ if "page" not in st.session_state:
     st.session_state.page = "Accueil"
     
 # Titre de l'application
-st.title("<h1 style='text-align: center;color:white'> 🏡 **Application de Prédiction du BANK CHURN**")
+st.title("🏡 **Application de Prédiction du BANK CHURN**")
 st.markdown(
     """
     <style>
