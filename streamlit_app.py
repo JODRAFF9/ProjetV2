@@ -17,6 +17,17 @@ train_df_labelled=train_df.drop(['id',"CustomerId","Surname"], axis=1)
 map(train_df_labelled)
 
 ############################################ Pages
+with st.sidebar:
+    st.title("🏢 À propos de l'entreprise")
+    st.markdown("""
+    **Bank Analytics**  
+    Spécialiste en analyse de données bancaires et en fidélisation client.  
+    Notre objectif est de vous aider à **prédire le churn** et à optimiser la **rétention client** grâce à l'**intelligence artificielle**.
+    
+    📍 Basée à Dakar  
+    📞 Contact : support@bankanalytics.com  
+    """)
+    
 
 # Initialisation de l'état de la page (si ce n'est pas déjà fait)
 if "page" not in st.session_state:
