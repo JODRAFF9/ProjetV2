@@ -28,7 +28,7 @@ def map(data):
 
 def unmap(data):
     """Remappe les valeurs 'No'/'Yes' vers 0/1 pour la prédiction."""
-    binary_mapping = {'No': 0, 'Yes': 1}
+    binary_mapping = {'No':0., 'Yes':1.}
     binary_cols = ['HasCrCard', 'IsActiveMember']
     for col in binary_cols:
         if col in data.columns:
