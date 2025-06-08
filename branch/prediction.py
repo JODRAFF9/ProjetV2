@@ -2,7 +2,7 @@ import sklearn
 from sklearn.linear_model import LogisticRegression
 import streamlit as st
 import pandas as pd
-from funcs import load_model,unmap
+from funcs import load_model,unmap,nom_variable
 
 
 def prediction(data):
@@ -18,9 +18,9 @@ def prediction(data):
     
     for col_label in input_features.columns:
         if input_features[col_label].dtype == 'object':
-            form_data[col_label] = st.selectbox(f"{col_label}", options=sorted(input_features[col_label].unique()))
+            form_data[col_label] = st.selectbox(f"{nom_variable(col_label)}", options=sorted(input_features[col_label].unique()))
         else:
-            form_data[col_label] = st.number_input(f"{col_label}", value=float(input_features[col_label].mean()))
+            form_data[col_label] = st.number_input(f"{nom_variable(col_label)}", value=float(input_features[col_label].mean()))
 
     input_data = pd.DataFrame([form_data])
     input_data=unmap(input_data)
