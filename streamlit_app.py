@@ -34,11 +34,11 @@ st.markdown(
 with st.sidebar:
     st.image("docs/icon.png", width=350)
     st.markdown("""
-    ### À propos de l'entreprise
+    ### **À propos de l'entreprise**
     
-    Bienvenue dans notre application de prédiction du churn bancaire.
+    **Bienvenue dans notre application de prédiction du churn bancaire.**
     
-    Cette solution vise à analyser les comportements des clients et prédire les départs potentiels pour améliorer la fidélisation.
+    **Cette solution vise à analyser les comportements des clients et prédire les départs potentiels pour améliorer la fidélisation.**
     """)
     
 #############################################################################
