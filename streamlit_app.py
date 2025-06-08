@@ -34,12 +34,10 @@ st.markdown(
 with st.sidebar:
     st.image("docs/icon2.png", width=350)
     st.markdown("""
-    ### **À propos de l'entreprise**
-    
-    **Bienvenue dans notre application de prédiction du churn bancaire.**
-    
-    **Cette solution vise à analyser les comportements des clients et prédire les départs potentiels pour améliorer la fidélisation.**
-    """)
+    <h3 style='color:blue;'>À propos de l'entreprise</h3>
+    <p><strong style='color:black;'>Bienvenue dans notre application de prédiction du churn bancaire.</strong></p>
+    <p><strong style='color:black;'>Cette solution vise à analyser les comportements des clients et prédire les départs potentiels pour améliorer la fidélisation.</strong></p>
+""", unsafe_allow_html=True)
     
 #############################################################################
 # Initialisation de l'état de la page (si ce n'est pas déjà fait)
