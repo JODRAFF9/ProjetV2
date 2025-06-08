@@ -39,7 +39,24 @@ def prediction(data):
             else:
                 st.error(f"Erreur API : {response.status_code}")
         except Exception as e:
+            
             st.error(f"Erreur lors de la requête API : {e}")
+            
+        st.write("---")
+        try:
+            prediction = model.predict(input_data)[0]
+            proba = model.predict_proba(input_data)[0][1]  # Proba de churn
+
+            if prediction == "Yes":
+                st.error(f"❌ Le client est susceptible de quitter la banque. (Probabilité : {proba:.2%})")
+            else:
+                st.success(f"✅ Le client est susceptible de rester. (Probabilité de churn : {proba:.2%})")
+
+        except Exception as e:
+            st.error(f"Erreur lors de la prédiction : {e}")
+
+        st.write("---")
+            
 
     st.write("---")
 
