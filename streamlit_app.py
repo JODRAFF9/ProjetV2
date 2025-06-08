@@ -20,7 +20,7 @@ map(train_df_labelled)
 
 # Sidebar personnalisée
 with st.sidebar:
-    st.image("docs/icon.png", width=200)  # Remplace par le chemin de ton image
+    st.image("docs/icon.png", width=350)  # Remplace par le chemin de ton image
     st.markdown("""
     ### 📌 À propos de l'entreprise
     
