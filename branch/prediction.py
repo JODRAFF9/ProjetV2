@@ -28,7 +28,7 @@ def prediction(data):
 
     if st.button("🔮 Prédire"):
         st.write("---")
-        data = input_data.to_json(orient='records')
+        data = input_data.iloc[0].to_dict()
         try:
             response = requests.post("http://localhost:8000/predict", json=data)
             if response.status_code == 200:
