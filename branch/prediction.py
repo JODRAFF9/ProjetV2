@@ -18,7 +18,6 @@ def prediction(data):
             form_data[col_label] = st.number_input(f"{nom_variable(col_label)}", value=float(input_features[col_label].mean()))
 
     input_data = pd.DataFrame([form_data])
-    input_data=unmap(input_data)
 
     if st.checkbox("📋 Afficher les données saisies"):
         input_data_renamed = input_data.rename(columns=correspondance)
