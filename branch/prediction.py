@@ -30,7 +30,7 @@ def prediction(data):
         st.write("---")
         data = input_data.to_json(orient='records')
         try:
-            response = requests.post("http://localhost:8000/predict", json=data[0])
+            response = requests.post("http://localhost:8000/predict", json=data)
             if response.status_code == 200:
                 result = response.json()
                 if result["prediction"] == 1:
