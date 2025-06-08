@@ -34,7 +34,7 @@ st.markdown(
 with st.sidebar:
     st.image("docs/icon.png", width=350)
     st.markdown("""
-    ### 📌 À propos de l'entreprise
+    ### À propos de l'entreprise
     
     Bienvenue dans notre application de prédiction du churn bancaire.
     
