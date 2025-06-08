@@ -29,21 +29,21 @@ def prediction(data):
     if st.button("🔮 Prédire"):
         st.write("---")
         data = input_data.iloc[0].to_dict()
-        try:
-            response = requests.post("http://localhost:8000/predict", json=data)
-            if response.status_code == 200:
-                result = response.json()
-                if result["prediction"] == 1:
-                    st.error(f"❌ Client susceptible de quitter la banque (Probabilité : {result['probability']:.2%})")
-                else:
-                    st.success(f"✅ Client susceptible de rester (Probabilité : {result['probability']:.2%})")
-            else:
-                st.error(f"Erreur API : {response.status_code}")
-        except Exception as e:
+        # try:
+        #     response = requests.post("http://localhost:8000/predict", json=data)
+        #     if response.status_code == 200:
+        #         result = response.json()
+        #         if result["prediction"] == 1:
+        #             st.error(f"❌ Client susceptible de quitter la banque (Probabilité : {result['probability']:.2%})")
+        #         else:
+        #             st.success(f"✅ Client susceptible de rester (Probabilité : {result['probability']:.2%})")
+        #     else:
+        #         st.error(f"Erreur API : {response.status_code}")
+        # except Exception as e:
             
-            st.error(f"Erreur lors de la requête API : {e}")
+        #     st.error(f"Erreur lors de la requête API : {e}")
             
-        st.write("---")
+        # st.write("---")
         try:
             prediction = model.predict(input_data)[0]
             proba = model.predict_proba(input_data)[0][1]  # Proba de churn
