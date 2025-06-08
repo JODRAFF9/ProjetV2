@@ -27,9 +27,6 @@ with st.sidebar:
     Bienvenue dans notre application de prédiction du churn bancaire.
     
     Cette solution vise à analyser les comportements des clients et prédire les départs potentiels pour améliorer la fidélisation.
-
-    **Entreprise** : XYZ Analytics  
-    **Contact** : contact@xyz-analytics.com
     """)
     
 #############################################################################
