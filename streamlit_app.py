@@ -19,8 +19,20 @@ map(train_df_labelled)
 ##################################################################
 
 # Sidebar personnalisée
+st.markdown(
+    """
+    <style>
+    [data-testid="stSidebar"] {
+        background-color: #e6f0ff; /* Bleu clair */
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+# Contenu de la sidebar
 with st.sidebar:
-    st.image("docs/icon.png", width=350)  # Remplace par le chemin de ton image
+    st.image("docs/icon.png", width=350)
     st.markdown("""
     ### 📌 À propos de l'entreprise
     
