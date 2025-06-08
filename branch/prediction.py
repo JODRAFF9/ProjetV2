@@ -1,9 +1,10 @@
 import requests
 import streamlit as st
 import pandas as pd
-from funcs import unmap,nom_variable,correspondance
+from funcs import unmap,nom_variable,correspondance,load_model
 
 def prediction(data):
+    model=load_model()
     st.write("---")
     st.subheader("🔍 Prédiction de Churn Client")
     form_data = {}
