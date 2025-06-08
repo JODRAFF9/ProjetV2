@@ -10,14 +10,14 @@ app = FastAPI()
 # Classe qui représente les données d'entrée
 class ClientFeatures(BaseModel):
     CreditScore: float
-    Geography: float
-    Gender: float
+    Geography: str
+    Gender: str
     Age: float
     Tenure: float
     Balance: float
     NumOfProducts: float
-    HasCrCard: float
-    IsActiveMember: float
+    HasCrCard: str
+    IsActiveMember: str
     EstimatedSalary: float
 
 # Charger le modèle une fois au démarrage
