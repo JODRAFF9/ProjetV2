@@ -1,16 +1,11 @@
-import sklearn
-from sklearn.linear_model import LogisticRegression
+import requests
 import streamlit as st
 import pandas as pd
-from funcs import load_model,unmap,nom_variable,correspondance
-
+from funcs import unmap,nom_variable,correspondance
 
 def prediction(data):
-    model = load_model()
     st.write("---")
-    
     st.subheader("🔍 Prédiction de Churn Client")
-    
     form_data = {}
     input_features = data.drop("Exited", axis=1)
     
@@ -33,17 +28,19 @@ def prediction(data):
 
     if st.button("🔮 Prédire"):
         st.write("---")
+        data = input_data.to_json(orient='records')
         try:
-            prediction = model.predict(input_data)[0]
-            proba = model.predict_proba(input_data)[0][1]  # Proba de churn
-
-            if prediction == 1:
-                st.error(f"❌ Le client est susceptible de quitter la banque. (Probabilité : {proba:.2%})")
+            response = requests.post("http://localhost:8000/predict", json=data[0])
+            if response.status_code == 200:
+                result = response.json()
+                if result["prediction"] == 1:
+                    st.error(f"❌ Client susceptible de quitter la banque (Probabilité : {result['probability']:.2%})")
+                else:
+                    st.success(f"✅ Client susceptible de rester (Probabilité : {result['probability']:.2%})")
             else:
-                st.success(f"✅ Le client est susceptible de rester. (Probabilité de churn : {proba:.2%})")
-
+                st.error(f"Erreur API : {response.status_code}")
         except Exception as e:
-            st.error(f"Erreur lors de la prédiction : {e}")
+            st.error(f"Erreur lors de la requête API : {e}")
 
     st.write("---")
 
