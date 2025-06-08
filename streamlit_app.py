@@ -10,7 +10,7 @@ from branch.apropos import apropos
 from funcs import load_data, map, style
 
 # Configuration de la page Streamlit
-st.set_page_config(page_title="Prédiction du BANK CHURN ",page_icon="docs/icon.png" , layout="wide")
+st.set_page_config(page_title="Prédiction du BANK CHURN ",page_icon="docs/icon.png" , layout="wide",initial_sidebar_state="expanded")
 
 # Chargement des données
 train_df = load_data("data/cleaned data/train_df.csv")
