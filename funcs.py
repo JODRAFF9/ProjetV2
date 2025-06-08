@@ -128,3 +128,21 @@ def style():
     """,
     unsafe_allow_html=True
 )
+
+correspondance = {
+    # Format: 'nom_technique': 'nom descriptif'
+    'id': "l'identifiant unique",
+    'CustomerId': "l'identifiant du client",
+    'Surname': 'le nom du client',
+    'CreditScore': "le score de crédit",
+    'Geography': 'le pays de résidence',
+    'Gender': 'le genre du client',
+    'Age': "l'âge du client",
+    'Tenure': 'la durée de relation client',
+    'Balance': 'le solde du compte',
+    'NumOfProducts': 'le nombre de produits souscrits',
+    'HasCrCard': "la possession d'une carte crédit",
+    'IsActiveMember': "le statut de membre actif",
+    'EstimatedSalary': "le revenu annuel estimé",
+    'Exited': "l'indicateur d'attrition"
+}

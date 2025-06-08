@@ -2,7 +2,7 @@ import sklearn
 from sklearn.linear_model import LogisticRegression
 import streamlit as st
 import pandas as pd
-from funcs import load_model,unmap,nom_variable
+from funcs import load_model,unmap,nom_variable,correspondance
 
 
 def prediction(data):
@@ -26,8 +26,10 @@ def prediction(data):
     input_data=unmap(input_data)
 
     if st.checkbox("📋 Afficher les données saisies"):
-        st.dataframe(input_data)
+        input_data_renamed = input_data.rename(columns=correspondance)
+        st.dataframe(input_data_renamed)
         st.write("---")
+
 
     if st.button("🔮 Prédire"):
         st.write("---")
