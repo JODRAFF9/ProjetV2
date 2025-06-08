@@ -23,7 +23,7 @@ st.markdown(
     """
     <style>
     [data-testid="stSidebar"] {
-        background-color: black; /* Bleu clair */
+        background-color: #D3D3D3; /* Bleu clair */
     }
     </style>
     """,
