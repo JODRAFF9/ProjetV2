@@ -32,7 +32,7 @@ st.markdown(
 
 # Contenu de la sidebar
 with st.sidebar:
-    st.image("docs/icon.png", width=350)
+    st.image("docs/icon2.png", width=350)
     st.markdown("""
     ### **À propos de l'entreprise**
     
