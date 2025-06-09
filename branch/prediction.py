@@ -1,7 +1,7 @@
 import requests
 import streamlit as st
 import pandas as pd
-from funcs import unmap,nom_variable,correspondance,load_model
+from funcs import nom_variable,correspondance,load_model
 
 def prediction(data):
     model=load_model()
@@ -56,8 +56,4 @@ def prediction(data):
         except Exception as e:
             st.error(f"Erreur lors de la prédiction : {e}")
 
-        st.write("---")
-            
-
     st.write("---")
-
