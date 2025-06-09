@@ -1,4 +1,4 @@
-import requests
+#import requests
 import streamlit as st
 import pandas as pd
 from funcs import nom_variable,correspondance,load_model
