@@ -25,8 +25,8 @@ def prediction(data):
         st.write("---")
 
     #model=load_model()
-    # if st.button("🔮 Prédire"):
-    #     st.write("---")
+    if st.button("🔮 Prédire"):
+         st.write("---")
     #     data = input_data.iloc[0].to_dict()
     #     try:
     #         prediction = model.predict(input_data)[0]
