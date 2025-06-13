@@ -4,16 +4,30 @@ from funcs import map
 
 def analyse(data):
     map(data)
-    col1, col2= st.columns(2)
-    col3, col4=st.columns(2)
+    col1, col2,col3= st.columns(3)
+
 
     with col1:
         st.markdown(
             f"""
-            <div style="background-color:#f0f8ff;color:black; padding:8px; border-radius:10px; text-align:center">
-                <h3>👥 le nombre de clients </h3>
-                <p style="font-size:20px; color:#007acc;"><strong>{data.shape[0]}</strong></p>
-            </div>
+            <div style="max-width: 320px;margin: 30px auto;
+                background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%);
+                color: #222;
+                border-radius: 16px;
+                box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+                padding: 32px 24px 24px 24px;
+                text-align: center;
+                font-family: 'Segoe UI', Arial, sans-serif;">
+                <div style="font-size: 38px; margin-bottom: 10px;">👥</div>
+                <div style="font-size: 22px; font-weight: 600; color: #007acc; margin-bottom: 6px;">
+                    Nombre de clients
+                </div>
+                <div style="font-size: 40px; font-weight: bold; color: #01579b;">
+                    { data.shape[0] }
+                    </div> 
+            </div>            
+            
+            
             """,
             unsafe_allow_html=True
         )
@@ -26,6 +40,23 @@ def analyse(data):
                 <h3>❌ Taux de Churn</h3>
                 <p style="font-size:20px; color:#cc0000;"><strong>{churn_rate:.2f} %</strong></p>
             </div>
+            
+            <div style="max-width: 320px;margin: 30px auto;
+                background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%);
+                color: #222;
+                border-radius: 16px;
+                box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+                padding: 32px 24px 24px 24px;
+                text-align: center;
+                font-family: 'Segoe UI', Arial, sans-serif;">
+                <div style="font-size: 38px; margin-bottom: 10px;">❌</div>
+                <div style="font-size: 22px; font-weight: 600; color: #007acc; margin-bottom: 6px;">
+                    Nombre de clients
+                </div>
+                <div style="font-size: 40px; font-weight: bold; color: #01579b;">
+                    {churn_rate:.2f}
+                    </div> 
+            </div>                   
             """,
             unsafe_allow_html=True
         )
@@ -39,22 +70,26 @@ def analyse(data):
                 <h3>💰 Salaire Moyen des clients</h3>
                 <p style="font-size:20px; color:#008000;"><strong>{avg_salary:,.0f} €</strong></p>
             </div>
+                        <div style="max-width: 320px;margin: 30px auto;
+                background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%);
+                color: #222;
+                border-radius: 16px;
+                box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+                padding: 32px 24px 24px 24px;
+                text-align: center;
+                font-family: 'Segoe UI', Arial, sans-serif;">
+                <div style="font-size: 38px; margin-bottom: 10px;">💰 </div>
+                <div style="font-size: 22px; font-weight: 600; color: #007acc; margin-bottom: 6px;">
+                    Nombre de clients
+                </div>
+                <div style="font-size: 40px; font-weight: bold; color: #01579b;">
+                    {churn_rate:.2f}
+                    </div> 
+            </div>  
             """,
             unsafe_allow_html=True
     )
-
     
-    with col4:
-        avg_salary = data["EstimatedSalary"].mean()
-        st.markdown(
-            f"""
-            <div style="background-color:#f0fff0;color:black; padding:10px; border-radius:10px; text-align:center">
-                <h3>💰 Salaire Moyen des clients</h3>
-                <p style="font-size:20px; color:#008000;"><strong>{avg_salary:,.0f} €</strong></p>
-            </div>
-            """,
-            unsafe_allow_html=True
-    )
     st.markdown("---")
     
     @st.cache_data
