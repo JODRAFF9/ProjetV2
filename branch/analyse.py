@@ -74,7 +74,7 @@ def analyse(data):
                     Le salaire moyen
                 </div>
                 <div style="font-size: 40px; font-weight: bold; color: #01579b;">
-                    {avg_salary:.2f}
+                    {avg_salary:.0f}
                     </div> 
             </div>  
             """,
