@@ -10,9 +10,9 @@ def analyse(data):
     with col1:
         st.markdown(
             f"""
-            <div style="background-color:#f0f8ff;color:black; padding:10px; border-radius:10px; text-align:center">
+            <div style="background-color:#f0f8ff;color:black; padding:8px; border-radius:10px; text-align:center">
                 <h3>👥 le nombre de clients </h3>
-                <p style="font-size:25px; color:#007acc;"><strong>{data.shape[0]}</strong></p>
+                <p style="font-size:20px; color:#007acc;"><strong>{data.shape[0]}</strong></p>
             </div>
             """,
             unsafe_allow_html=True
@@ -22,25 +22,27 @@ def analyse(data):
         churn_rate = (data['Exited'] == "Yes").mean() * 100
         st.markdown(
             f"""
-            <div style="background-color:#fff0f0;color:black; padding:10px; border-radius:10px; text-align:center">
+            <div style="background-color:#fff0f0;color:black; padding:8px; border-radius:10px; text-align:center">
                 <h3>❌ Taux de Churn</h3>
-                <p style="font-size:25px; color:#cc0000;"><strong>{churn_rate:.2f} %</strong></p>
+                <p style="font-size:20px; color:#cc0000;"><strong>{churn_rate:.2f} %</strong></p>
             </div>
             """,
             unsafe_allow_html=True
         )
-
+    st.markdown("---")
+    
     with col3:
         avg_salary = data["EstimatedSalary"].mean()
         st.markdown(
             f"""
             <div style="background-color:#f0fff0;color:black; padding:10px; border-radius:10px; text-align:center">
                 <h3>💰 Salaire Moyen des clients</h3>
-                <p style="font-size:25px; color:#008000;"><strong>{avg_salary:,.0f} €</strong></p>
+                <p style="font-size:20px; color:#008000;"><strong>{avg_salary:,.0f} €</strong></p>
             </div>
             """,
             unsafe_allow_html=True
     )
+
     
     with col4:
         avg_salary = data["EstimatedSalary"].mean()
@@ -48,7 +50,7 @@ def analyse(data):
             f"""
             <div style="background-color:#f0fff0;color:black; padding:10px; border-radius:10px; text-align:center">
                 <h3>💰 Salaire Moyen des clients</h3>
-                <p style="font-size:25px; color:#008000;"><strong>{avg_salary:,.0f} €</strong></p>
+                <p style="font-size:20px; color:#008000;"><strong>{avg_salary:,.0f} €</strong></p>
             </div>
             """,
             unsafe_allow_html=True
