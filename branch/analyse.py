@@ -4,7 +4,8 @@ from funcs import map
 
 def analyse(data):
     map(data)
-    col1, col2, col3 = st.columns(3)
+    col1, col2= st.columns(2)
+    col3, col4=st.columns(2)
 
     with col1:
         st.markdown(
@@ -40,7 +41,18 @@ def analyse(data):
             """,
             unsafe_allow_html=True
     )
-
+    
+    with col4:
+        avg_salary = data["EstimatedSalary"].mean()
+        st.markdown(
+            f"""
+            <div style="background-color:#f0fff0;color:black; padding:10px; border-radius:10px; text-align:center">
+                <h3>💰 Salaire Moyen des clients</h3>
+                <p style="font-size:25px; color:#008000;"><strong>{avg_salary:,.0f} €</strong></p>
+            </div>
+            """,
+            unsafe_allow_html=True
+    )
     st.markdown("---")
     
     @st.cache_data
@@ -67,10 +79,10 @@ def analyse(data):
     
     fig1, fig2, fig3 = compute_figs(data)
     
-    col4, col5 = st.columns(2)
-    with col4:
-        st.plotly_chart(fig1, use_container_width=True)
+    col5, col6 = st.columns(2)
     with col5:
+        st.plotly_chart(fig1, use_container_width=True)
+    with col6:
         st.plotly_chart(fig2, use_container_width=True)
 
     st.markdown("### 🎯 la relation entre âge et Churn")
