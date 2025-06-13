@@ -10,7 +10,7 @@ def analyse(data):
         st.markdown(
             f"""
             <div style="background-color:#f0f8ff;color:black; padding:10px; border-radius:10px; text-align:center">
-                <h3>👥 Clients</h3>
+                <h3>👥 le nombre de clients </h3>
                 <p style="font-size:25px; color:#007acc;"><strong>{data.shape[0]}</strong></p>
             </div>
             """,
@@ -22,7 +22,7 @@ def analyse(data):
         st.markdown(
             f"""
             <div style="background-color:#fff0f0;color:black; padding:10px; border-radius:10px; text-align:center">
-                <h3>❌ Churn Rate</h3>
+                <h3>❌ Taux de Churn</h3>
                 <p style="font-size:25px; color:#cc0000;"><strong>{churn_rate:.2f} %</strong></p>
             </div>
             """,
@@ -34,7 +34,7 @@ def analyse(data):
         st.markdown(
             f"""
             <div style="background-color:#f0fff0;color:black; padding:10px; border-radius:10px; text-align:center">
-                <h3>💰 Salaire Moyen</h3>
+                <h3>💰 Salaire Moyen des clients</h3>
                 <p style="font-size:25px; color:#008000;"><strong>{avg_salary:,.0f} €</strong></p>
             </div>
             """,
