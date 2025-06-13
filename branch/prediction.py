@@ -4,7 +4,6 @@ import pandas as pd
 from funcs import nom_variable,correspondance,load_model
 
 def prediction(data):
-    model=load_model()
     st.write("---")
     st.subheader("🔍 Prédiction de Churn Client")
     form_data = {}
@@ -25,7 +24,7 @@ def prediction(data):
         st.dataframe(input_data_renamed)
         st.write("---")
 
-
+    #model=load_model()
     # if st.button("🔮 Prédire"):
     #     st.write("---")
     #     data = input_data.iloc[0].to_dict()
