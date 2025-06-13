@@ -1,7 +1,9 @@
 import streamlit as st
 import plotly.express as px
+from funcs import map
 
 def analyse(data):
+    map(data)
     col1, col2, col3 = st.columns(3)
 
     with col1:
