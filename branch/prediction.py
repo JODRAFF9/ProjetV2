@@ -27,7 +27,7 @@ def prediction(data):
     #model=load_model()
     if st.button("🔮 Prédire"):
          st.write("---")
-    #     data = input_data.iloc[0].to_dict()
+         data = input_data.iloc[0].to_dict()
     #     try:
     #         prediction = model.predict(input_data)[0]
     #         proba = model.predict_proba(input_data)[0][1]  # Proba de churn
