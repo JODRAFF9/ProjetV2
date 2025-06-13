@@ -71,10 +71,10 @@ def analyse(data):
                 font-family: 'Segoe UI', Arial, sans-serif;">
                 <div style="font-size: 38px; margin-bottom: 10px;">💰 </div>
                 <div style="font-size: 22px; font-weight: 600; color: #007acc; margin-bottom: 6px;">
-                    Nombre de clients
+                    Le salaire moyen
                 </div>
                 <div style="font-size: 40px; font-weight: bold; color: #01579b;">
-                    {churn_rate:.2f}
+                    {avg_salary}
                     </div> 
             </div>  
             """,
