@@ -36,11 +36,6 @@ def analyse(data):
         churn_rate = (data['Exited'] == "Yes").mean() * 100
         st.markdown(
             f"""
-            <div style="background-color:#fff0f0;color:black; padding:8px; border-radius:10px; text-align:center">
-                <h3>❌ Taux de Churn</h3>
-                <p style="font-size:20px; color:#cc0000;"><strong>{churn_rate:.2f} %</strong></p>
-            </div>
-            
             <div style="max-width: 320px;margin: 30px auto;
                 background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%);
                 color: #222;
@@ -66,11 +61,7 @@ def analyse(data):
         avg_salary = data["EstimatedSalary"].mean()
         st.markdown(
             f"""
-            <div style="background-color:#f0fff0;color:black; padding:10px; border-radius:10px; text-align:center">
-                <h3>💰 Salaire Moyen des clients</h3>
-                <p style="font-size:20px; color:#008000;"><strong>{avg_salary:,.0f} €</strong></p>
-            </div>
-                        <div style="max-width: 320px;margin: 30px auto;
+            <div style="max-width: 320px;margin: 30px auto;
                 background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%);
                 color: #222;
                 border-radius: 16px;
