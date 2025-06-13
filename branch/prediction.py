@@ -26,19 +26,19 @@ def prediction(data):
         st.write("---")
 
 
-    if st.button("🔮 Prédire"):
-        st.write("---")
-        data = input_data.iloc[0].to_dict()
-        try:
-            prediction = model.predict(input_data)[0]
-            proba = model.predict_proba(input_data)[0][1]  # Proba de churn
+    # if st.button("🔮 Prédire"):
+    #     st.write("---")
+    #     data = input_data.iloc[0].to_dict()
+    #     try:
+    #         prediction = model.predict(input_data)[0]
+    #         proba = model.predict_proba(input_data)[0][1]  # Proba de churn
 
-            if prediction == "Yes":
-                st.error(f"❌ Le client est susceptible de quitter la banque. (Probabilité : {proba:.2%})")
-            else:
-                st.success(f"✅ Le client est susceptible de rester. (Probabilité de churn : {proba:.2%})")
+    #         if prediction == "Yes":
+    #             st.error(f"❌ Le client est susceptible de quitter la banque. (Probabilité : {proba:.2%})")
+    #         else:
+    #             st.success(f"✅ Le client est susceptible de rester. (Probabilité de churn : {proba:.2%})")
 
-        except Exception as e:
-            st.error(f"Erreur lors de la prédiction : {e}")
+    #     except Exception as e:
+    #         st.error(f"Erreur lors de la prédiction : {e}")
 
     st.write("---")
