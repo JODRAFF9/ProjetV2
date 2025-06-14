@@ -14,7 +14,7 @@ def load_data(file_path):
 
 @st.cache_resource
 def load_model():
-    with open("code/final_model/rl_model.pkl", "rb") as f:
+    with open("code/final_model/logistic_regression.pkl", "rb") as f:
         return pickle.load(f)
 
 def map(data):
