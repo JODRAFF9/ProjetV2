@@ -91,7 +91,7 @@ Le modèle retenu a été intégré dans un dashboard interactif permettant une 
 
 **Supervision** :
 
-* *Madame Mously DIAW*, Data Scientist
+* *Madame Mously DIAW*,Data scientist / ML Engineer / Auto-Entrepreneur
 
 ---
 
