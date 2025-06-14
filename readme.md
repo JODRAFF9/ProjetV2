@@ -1,5 +1,3 @@
----
-
 
 
 # Bank Churn Scoring
@@ -80,16 +78,21 @@ Le modèle retenu a été intégré dans un dashboard interactif permettant une 
 
 ---
 
-## 👥 Encadrement
+## 👥 Équipe projet
 
-* **Présenté par** : \[Ton nom ici]
-* **Supervisé par** : Mme Mously DIAW (Data Scientist)
-* **Institution** : ENSAE Pierre NDIAYE / ANSD
+**Présenté par** :
+
+* **Famara SADIO**
+* **Saran NDIAYE**
+* **Sié Rachid TRAORE**
+* **Amadou YOUM**
+
+**Supervision** :
+
+* *Madame Mously DIAW*, Data Scientist
 
 ---
 
 ## 📎 Licence
 
-Projet réalisé à des fins pédagogiques dans le cadre du cours de **Machine Learning II**.
-
----
+Projet réalisé à des fins pédagogiques dans le cadre du cours de **Machine Learning II** à l’ENSAE Pierre NDIAYE en partenariat avec l’ANSD.
