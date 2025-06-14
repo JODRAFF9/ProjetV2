@@ -3,5 +3,5 @@ pandas==2.3.0
 streamlit==1.45.1
 dill==0.4.0
 plotly==6.1.2
-scikit-learn==1.2.8
+scikit-learn==1.7.0
 imblearn==0.0
