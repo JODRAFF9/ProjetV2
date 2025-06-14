@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import pickle
+import sklearn
 
 # Fonction pour charger les données (mise en cache)
 @st.cache_data
