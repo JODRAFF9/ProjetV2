@@ -32,7 +32,7 @@ st.markdown(
 
 # Contenu de la sidebar
 with st.sidebar:
-    st.image("docs/icon2.png", width=350)
+    st.image("docs/img/icon2.png", width=350)
     st.markdown("""
     <h3 style='color:blue;'>À propos de l'entreprise</h3>
     <p><strong style='color:black;'>Bienvenue dans notre application de prédiction du churn bancaire.</strong></p>
