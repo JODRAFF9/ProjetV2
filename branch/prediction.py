@@ -25,19 +25,48 @@ def prediction(data):
         st.write("---")
 
     model=load_model()
-    if st.button("🔮 Prédire"):
-        st.write("---")
-        data = input_data.iloc[0].to_dict()
-        try:
-             prediction = model.predict(input_data)[0]
-             proba = model.predict_proba(input_data)[0][1]  # Proba de churn
+    if st.button("🔮 Lancer la prédiction"):
+        st.markdown("---")
+        st.markdown("<h3 style='color:#4B8BBE;'>📊 Résultat de la prédiction</h3>", unsafe_allow_html=True)
 
-             if prediction == "Yes":
-                 st.error(f"❌ Le client est susceptible de quitter la banque. (Probabilité : {proba:.2%})")
-             else:
-                 st.success(f"✅ Le client est susceptible de rester. (Probabilité de churn : {proba:.2%})")
+        data = input_data.iloc[0].to_dict()
+
+        try:
+            prediction = model.predict(input_data)[0]
+            proba = model.predict_proba(input_data)[0][1]  # Probabilité de churn
+
+            if prediction == 1:
+                st.markdown(
+                    f"""
+                    <div style="background-color:#FFCCCC;padding:20px;border-radius:10px;border:1px solid #FF4B4B;">
+                        <h4 style="color:#C70039;">❌ Risque de départ</h4>
+                        <p>Le modèle prédit que ce client <strong>pourrait quitter la banque</strong>.</p>
+                        <p><strong>Probabilité de churn :</strong> {proba:.2%}</p>
+                    </div>
+                    """,
+                    unsafe_allow_html=True
+                )
+            else:
+                st.markdown(
+                    f"""
+                    <div style="background-color:#D4EDDA;padding:20px;border-radius:10px;border:1px solid #28A745;">
+                        <h4 style="color:#155724;">✅ Fidélité probable</h4>
+                        <p>Le modèle prédit que ce client <strong>va probablement rester fidèle</strong>.</p>
+                        <p><strong>Probabilité de churn :</strong> {proba:.2%}</p>
+                    </div>
+                    """,
+                    unsafe_allow_html=True
+                )
 
         except Exception as e:
-             st.error(f"Erreur lors de la prédiction : {e}")
+            st.markdown(
+                f"""
+                <div style="background-color:#FFF3CD;padding:20px;border-radius:10px;border:1px solid #FFDD57;">
+                    <h4 style="color:#856404;">⚠️ Erreur lors de la prédiction</h4>
+                    <pre>{str(e)}</pre>
+                </div>
+                """,
+                unsafe_allow_html=True
+            )
 
-    st.write("---")
+        st.markdown("---")
