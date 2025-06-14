@@ -1,27 +1,32 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
-import pandas as pd
 from funcs import load_model
-import sklearn
-from sklearn.linear_model import LogisticRegression
+import pickle
+import pandas as pd
+
 
 app = FastAPI()
 
-# Classe qui représente les données d'entrée
+@app.get("/")
+def read_root():
+    return {"message":"Hello,FastAPI!"}
+
+# # Classe qui représente les données d'entrée
 class ClientFeatures(BaseModel):
-    CreditScore: float
+    CreditScore: int
     Geography: str
     Gender: str
-    Age: float
-    Tenure: float
+    Age: int
+    Tenure: int
     Balance: float
-    NumOfProducts: float
-    HasCrCard: str
-    IsActiveMember: str
+    NumOfProducts: int
+    HasCrCard: int
+    IsActiveMember: int
     EstimatedSalary: float
-
 # Charger le modèle une fois au démarrage
 model = load_model()
+# with open("rl_model.pkl","rb") as f:
+#     model=pickle.load(f)
 
 @app.post("/predict")
 def predict_churn(features: ClientFeatures):

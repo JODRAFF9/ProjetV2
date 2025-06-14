@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-import dill
+import pickle
 
 # Fonction pour charger les données (mise en cache)
 @st.cache_data
@@ -14,8 +14,8 @@ def load_data(file_path):
 
 @st.cache_resource
 def load_model():
-    with open("../code/final_model/rl_model.pkl", "rb") as f:
-        return dill.load(f)
+    with open("code/final_model/rl_model.pkl", "rb") as f:
+        return pickle.load(f)
 
 def map(data):
     """Mappe les valeurs binaires 0/1 vers 'No'/'Yes'."""

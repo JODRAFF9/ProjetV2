@@ -56,10 +56,10 @@ def set_page(page_name):
 # Barre de navigation horizontale avec des boutons
 col1, col2, col3, col4 = st.columns(4)
 with col1:
-    if st.button("🏠 Accueil"):
-        set_page("Accueil")
+    if st.button("🏠   Accueil  "):
+        set_page("Accueil  ")
 with col2:
-    if st.button("📊 Analyse"):
+    if st.button("📊   Analyse  "):
         set_page("Analyse")
 with col3:
     if st.button("🔍 Prédiction"):
