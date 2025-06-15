@@ -76,6 +76,7 @@ L’attrition des clients est un défi majeur pour les institutions financières
 
 Le modèle retenu a été intégré dans un dashboard interactif permettant une visualisation dynamique des résultats et un système d'alerte pour anticiper les départs de clients.
 
+🟢 Application en ligne : [Bank Churn Scoring – Streamlit App](https://churn2.streamlit.app/)
 
 
 ---
