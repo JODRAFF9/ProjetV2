@@ -14,7 +14,7 @@ def load_data(file_path):
 
 @st.cache_resource
 def load_model():
-    url = "https://drive.google.com/uc?id=1nRzmO-r2kvPmChTuNUfeVbzoEu-Pc1qe""
+    url = "https://drive.google.com/uc?id=1nRzmO-r2kvPmChTuNUfeVbzoEu-Pc1qe"
     output = "model.pkl"
     gdown.download(url, output, quiet=False)
     with open(output, "rb") as f:
