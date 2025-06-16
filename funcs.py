@@ -21,8 +21,6 @@ def load_model():
         model = pickle.load(f)
     return model
 
-    return model
-
 
 def map(data):
     """Mappe les valeurs binaires 0/1 vers 'No'/'Yes'."""
