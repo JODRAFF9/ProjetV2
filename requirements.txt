@@ -4,3 +4,4 @@ scikit-learn==1.7.0
 streamlit==1.45.1
 dill==0.4.0
 plotly==6.1.2
+requests==2.32.4
