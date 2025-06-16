@@ -14,8 +14,18 @@ def load_data(file_path):
 
 @st.cache_resource
 def load_model():
-    with open("code/final_model/logistic_regression.pkl", "rb") as f:
-        return pickle.load(f)
+    # Lien de téléchargement direct
+    url = f"https://drive.google.com/uc?export=download&id=1nRzmO-r2kvPmChTuNUfeVbzoEu-Pc1qe"
+    
+    # Télécharger le fichier dans un fichier temporaire
+    response = requests.get(url)
+    if response.status_code != 200:
+        raise Exception("Erreur lors du téléchargement : ", response.status_code)
+
+    # Charger le modèle directement depuis le contenu téléchargé
+    model = pickle.loads(response.content)
+    return model
+
 
 def map(data):
     """Mappe les valeurs binaires 0/1 vers 'No'/'Yes'."""
