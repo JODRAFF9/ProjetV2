@@ -1,8 +1,7 @@
 import streamlit as st
 import pandas as pd
 import pickle
-import requests
-
+import gdown
 # Fonction pour charger les données (mise en cache)
 @st.cache_data
 def load_data(file_path):
@@ -15,16 +14,13 @@ def load_data(file_path):
 
 @st.cache_resource
 def load_model():
-    # Lien de téléchargement direct
-    url = f"https://drive.google.com/uc?export=download&id=1nRzmO-r2kvPmChTuNUfeVbzoEu-Pc1qe"
-    
-    # Télécharger le fichier dans un fichier temporaire
-    response = requests.get(url)
-    if response.status_code != 200:
-        raise Exception("Erreur lors du téléchargement : ", response.status_code)
+    url = "https://drive.google.com/uc?id=1nRzmO-r2kvPmChTuNUfeVbzoEu-Pc1qe""
+    output = "model.pkl"
+    gdown.download(url, output, quiet=False)
+    with open(output, "rb") as f:
+        model = pickle.load(f)
+    return model
 
-    # Charger le modèle directement depuis le contenu téléchargé
-    model = pickle.loads(response.content)
     return model
 
 
