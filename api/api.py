@@ -3,6 +3,11 @@ from pydantic import BaseModel
 from funcs import load_model
 import pickle
 import pandas as pd
+import sys
+import os
+
+# Ajouter le dossier parent (mon_projet) au path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 
 app = FastAPI()
