@@ -95,17 +95,17 @@ def analyse(data):
     @st.cache_data
     def compute_figs(df):
         fig1 = px.histogram(df, x="Geography", color="Exited", barmode="group",
-                            title="L'attrition selon la localité du client", color_discrete_map={"Non": "green", "Oui": "red"})
+                            title="L'attrition selon la localité du client", color_discrete_map={"No": "green", "Yes": "red"})
         fig1.update_layout(transition=dict(duration=0))
 
         gender_churn = compute_gender_churn(df)
         fig2 = px.bar(gender_churn, x='Gender', y='count', color='Exited',
                     title="L'attrition selon le sexe du client", barmode="group",
-                    color_discrete_map={"Non": "green", "Oui": "red"})
+                    color_discrete_map={"No": "green", "Yes": "red"})
         fig2.update_layout(transition=dict(duration=0))
 
         fig3 = px.box(df, x='Exited', y='Age', color='Exited',
-                    title="L'attrition selon l'âge du client", color_discrete_map={"Non": "green", "Oui": "red"})
+                    title="L'attrition selon l'âge du client", color_discrete_map={"No": "green", "Yes": "red"})
         fig3.update_layout(transition=dict(duration=0))
 
         return fig1, fig2, fig3
