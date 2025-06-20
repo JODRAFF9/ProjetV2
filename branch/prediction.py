@@ -1,7 +1,7 @@
 #import requests
 import streamlit as st
 import pandas as pd
-from funcs import nom_variable,correspondance,load_model
+from funcs import nom_variable,correspondance,load_model,map,unmap
 
 def prediction(data):
     st.write("---")
@@ -10,7 +10,7 @@ def prediction(data):
     input_features = data.drop("Exited", axis=1)
     
     st.markdown("**Veuillez saisir les caractéristiques du client :**")
-    
+    input_features=map(input_features)
     for col_label in input_features.columns:
         if input_features[col_label].dtype == 'object':
             form_data[col_label] = st.selectbox(f"{nom_variable(col_label)}", options=sorted(input_features[col_label].unique()))
@@ -18,11 +18,14 @@ def prediction(data):
             form_data[col_label] = st.number_input(f"{nom_variable(col_label)}", value=float(input_features[col_label].mean()))
 
     input_data = pd.DataFrame([form_data])
+    
 
     if st.checkbox("📋 Afficher les données saisies"):
         input_data_renamed = input_data.rename(columns=correspondance)
         st.dataframe(input_data_renamed)
         st.write("---")
+    
+    input_data=unmap(input_data)
 
     #model=load_model()
     if st.button("🔮 Lancer la prédiction"):
