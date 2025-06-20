@@ -3,7 +3,7 @@
 # Bank Churn Scoring
 ![img1](docs/img/img1.png)
 ## 🎯 Objectif du projet
-
+![img2](docs/img/img2.png)
 Ce projet a pour but de :
 
 * **Identifier les facteurs clés** qui influencent l’attrition des clients bancaires.
@@ -76,7 +76,11 @@ L’attrition des clients est un défi majeur pour les institutions financières
 
 Le modèle retenu a été intégré dans un dashboard interactif permettant une visualisation dynamique des résultats et un système d'alerte pour anticiper les départs de clients.
 
+![vid1](docs/vid/vid1.gif)
+---
 🟢 Application en ligne : [Bank Churn Scoring – Streamlit App](https://churn2.streamlit.app/)
+
+
 
 
 ---
