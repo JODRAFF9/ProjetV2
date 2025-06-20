@@ -89,8 +89,8 @@ Le modèle retenu a été intégré dans un dashboard interactif permettant une 
 
 **Présenté par** :
 
-* **Famara SADIO**
 * **Amadou YOUM**
+* **Famara SADIO**
 * **Saran NDIAYE**
 * **Sié Rachid TRAORE**
 
