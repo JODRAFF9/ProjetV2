@@ -5,12 +5,21 @@ from funcs import map
 def analyse(data):
     map(data)
     col1, col2,col3= st.columns(3)
+    
+    # Calculs de métriques
+    nb_clients = data.shape[0]
+    churn_rate = (data['Exited'] == "Yes").mean() * 100
+    avg_salary = data["EstimatedSalary"].mean()
 
+    # Formatage
+    formatted_churn_rate = f"{churn_rate:.2f}".replace(".", ",") + " %"
+    formatted_salary = f"{avg_salary:,.0f} €".replace(",", " ").replace(".", ",")
 
+    # Affichage des cartes
     with col1:
         st.markdown(
             f"""
-            <div style="max-width: 320px;margin: 30px auto;
+            <div style="max-width: 320px; margin: 30px auto;
                 background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%);
                 color: #222;
                 border-radius: 16px;
@@ -23,20 +32,17 @@ def analyse(data):
                     Nombre de clients
                 </div>
                 <div style="font-size: 40px; font-weight: bold; color: #01579b;">
-                    { data.shape[0] }
-                    </div> 
-            </div>            
-            
-            
+                    {nb_clients}
+                </div> 
+            </div>  
             """,
             unsafe_allow_html=True
         )
 
     with col2:
-        churn_rate = (data['Exited'] == "Yes").mean() * 100
         st.markdown(
             f"""
-            <div style="max-width: 320px;margin: 30px auto;
+            <div style="max-width: 320px; margin: 30px auto;
                 background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%);
                 color: #222;
                 border-radius: 16px;
@@ -44,24 +50,22 @@ def analyse(data):
                 padding: 32px 24px 24px 24px;
                 text-align: center;
                 font-family: 'Segoe UI', Arial, sans-serif;">
-                <div style="font-size: 38px; margin-bottom: 10px;">❌</div>
+                <div style="font-size: 38px; margin-bottom: 10px;">📉</div>
                 <div style="font-size: 22px; font-weight: 600; color: #007acc; margin-bottom: 6px;">
-                    Nombre de clients
+                    Taux d'attrition client
                 </div>
                 <div style="font-size: 40px; font-weight: bold; color: #01579b;">
-                    {churn_rate:.2f}
-                    </div> 
+                    {formatted_churn_rate}
+                </div> 
             </div>                   
             """,
             unsafe_allow_html=True
         )
-    st.markdown("---")
-    
+
     with col3:
-        avg_salary = data["EstimatedSalary"].mean()
         st.markdown(
             f"""
-            <div style="max-width: 320px;margin: 30px auto;
+            <div style="max-width: 320px; margin: 30px auto;
                 background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%);
                 color: #222;
                 border-radius: 16px;
@@ -69,19 +73,20 @@ def analyse(data):
                 padding: 32px 24px 24px 24px;
                 text-align: center;
                 font-family: 'Segoe UI', Arial, sans-serif;">
-                <div style="font-size: 38px; margin-bottom: 10px;">💰 </div>
+                <div style="font-size: 38px; margin-bottom: 10px;">💰</div>
                 <div style="font-size: 22px; font-weight: 600; color: #007acc; margin-bottom: 6px;">
-                    Le salaire moyen
+                    Salaire moyen estimé
                 </div>
                 <div style="font-size: 40px; font-weight: bold; color: #01579b;">
-                    {avg_salary:.0f}
-                    </div> 
+                    {formatted_salary}
+                </div> 
             </div>  
             """,
             unsafe_allow_html=True
-    )
-    
+        )
+
     st.markdown("---")
+
     
     @st.cache_data
     def compute_gender_churn(df):
