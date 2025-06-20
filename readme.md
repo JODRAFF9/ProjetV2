@@ -81,8 +81,6 @@ Le modèle retenu a été intégré dans un dashboard interactif permettant une 
 🟢 Application en ligne : [Bank Churn Scoring – Streamlit App](https://churn2.streamlit.app/)
 
 
-
-
 ---
 
 ## 👥 Équipe projet
