@@ -118,6 +118,6 @@ def analyse(data):
     with col6:
         st.plotly_chart(fig2, use_container_width=True)
 
-    st.markdown("### 🎯 la relation entre âge et Churn")
+    st.markdown("### 🎯 L'attrition selon l'âge du client")
     st.plotly_chart(fig3, use_container_width=True)
  
